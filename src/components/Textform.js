@@ -25,8 +25,9 @@ export default function Textform(props) {
     const handlecopy=()=>{
         let copytext = text 
         props.showAlert("Copy successfull","success")
-
+        
         navigator.clipboard.writeText(copytext)
+        document.getSelection().removeAllRanges();
     }
 
     const handleclear=()=>{
@@ -45,24 +46,24 @@ export default function Textform(props) {
   return (
     <>
     <div className='container' style={{color:props.mode==='dark'?'white':'black'}}>     
-        <h1>{props.heading} </h1>
+        <h1 className='mb-4' >{props.heading} </h1>
         <div className="mb-3" >
             
             <textarea className="form-control" value={text} onChange={handleonchange} style={{backgroundColor:props.mode==='dark'?'#343a40':'white',
         color:props.mode==='dark'?'white':'black' }} id="mybox" rows="10" ></textarea>
         </div>
-            <button className="btn btn-primary mx-1 " onClick={handleonclick}>convert to uppercase</button>
-            <button className="btn btn-primary mx-1 " onClick={handleloclick}>convert to lowercase</button>
-            <button className="btn btn-primary mx-1 " onClick={handlecopy}>copy text</button>
-            <button className="btn btn-primary mx-1 " onClick={handleclear}>clear text</button>
-            <button className="btn btn-primary mx-1 " onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+            <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleonclick}>convert to uppercase</button>
+            <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleloclick}>convert to lowercase</button>
+            <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handlecopy}>copy text</button>
+            <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleclear}>clear text</button>
+            <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
 
     <div className="container my-3">
             <h1>Your text summary</h1>
-            <p>{text.split(" ").length} Words and {text.length} characters are there</p>
-            <p>{text.split(" ").length*0.008}  minutes to read words</p>
+            <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} Words and {text.length} characters are there</p>
+            <p>{text.split(" ").filter((element)=>{return element.length!==0}).length*0.008}  minutes to read words</p>
             <h3>Preview</h3>
-            <p>{text.length>0?text:"enter something text here to preview"}</p>
+            <p>{text.length>0?text:"Noting to preview"}</p>
     </div>
     </div>
    

@@ -1,7 +1,7 @@
   import Navbar from "./components/Navbar"
   import Textform from "./components/Textform"
   import './App.css';
-  // import About from "./components/About";
+  import About from "./components/About";
   import { useState } from "react";
   import Alert from "./components/Alert";
   // import {
@@ -37,7 +37,7 @@
         setBtnText('Enable light mode')
         showAlert("Dark mode is enabled","success")
         document.body.style.backgroundColor = '#343a40'
-        document.title = 'Textutils-DarkMode'
+        // document.title = 'Textutils-DarkMode'
       }
       else
       {
@@ -45,7 +45,7 @@
         showAlert("Light mode is enabled","success")
         setBtnText("Enable Dark mode")
         document.body.style.backgroundColor = 'white'
-        document.title = 'Textutils'
+        // document.title = 'Textutils'
       }
     }
 
@@ -56,7 +56,7 @@
         setBtn1Text('Enable Light mode')
         showAlert("yellow mode is enabled","success")
         document.body.style.backgroundColor = 'yellow'
-        document.title = 'Textutils-YellowMode'
+        // document.title = 'Textutils-YellowMode'
       }
       else
       {
@@ -64,7 +64,7 @@
         showAlert("Light mode is enabled","success")
         setBtn1Text("Enable Yellow mode")
         document.body.style.backgroundColor = 'white'
-        document.title = 'Textutils'
+        // document.title = 'Textutils'
       }
     }
     return (
@@ -75,9 +75,10 @@
 
       <div className="container my-5">
       <Textform showAlert= {showAlert} heading="enter the text" mode = {Mode}/>
-      {/* <Routes> */}
-        {/* <Route path="/about" element={<About/>}/> */}
-        {/* <Route exact path="/" element={<Textform showAlert= {showAlert} heading="enter the text" mode = {Mode}/>}/>
+     <About mode={Mode}/>
+      {/* <Routes>
+        <Route path="/about" element={<About mode={Mode}/>}/>
+        <Route exact path="/" element={<Textform showAlert= {showAlert} heading="Word counter , character counter , remove extra spaces" mode = {Mode}/>}/>
       </Routes> */}
       </div>
       {/* </Router> */}

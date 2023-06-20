@@ -1,41 +1,13 @@
 import { useState } from "react"
 import React  from 'react'
 
-export default function About() {
+export default function About(props) {
 
-    let Darkmode = {
-        
-        border:'2px solid black',
-        width:'40px',
-        height:'20px'
-    }
-    const [myStyle,setMystyle] = useState({
-        color:'black',
-        backgroundColor:'white'
-    })
-    const [btnText,setBtnText] = useState("Enable Dark mode")
-    const toggledarkmode = ()=>{
-        if(myStyle.color==='black')
-        {
-            setMystyle({
-                color:'white',
-                backgroundColor:'black',
-                border:"2px solid white"
-            })
-            setBtnText("Enable Light Mode")
-        }
-       
-        else
-        {
-            setMystyle({
-                color:'black',
-                backgroundColor:'white'
-                
-            })
-            setBtnText("Enable Dark Mode")
-        }
-        
-    }
+  let myStyle = {
+    color:props.mode === 'dark'?'white':'black',
+    backgroundColor: props.mode === "dark"?'#343a40':'white',
+   
+  }
   return (
 <div className='container' style={myStyle} >
     <h2>About Us</h2>
@@ -43,7 +15,7 @@ export default function About() {
   <div className="accordion-item">
     <h2 className="accordion-header">
       <button className="accordion-button" type="button" style={myStyle} data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        Accordion Item #1
+       Publisher
       </button>
     </h2>
     <div id="collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
@@ -55,7 +27,7 @@ export default function About() {
   <div className="accordion-item">
     <h2 className="accordion-header">
       <button className="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        Accordion Item #2
+       News
       </button>
     </h2>
     <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
@@ -67,7 +39,7 @@ export default function About() {
   <div className="accordion-item">
     <h2 className="accordion-header">
       <button className="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-        Accordion Item #3
+       News Link
       </button>
     </h2>
     <div id="collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
@@ -78,12 +50,7 @@ export default function About() {
   </div>
 </div>
 
-<div className="container my-3">
-<div className="form-check form-switch" onClick={toggledarkmode} >
-  <input className="form-check-input" type="checkbox" role="switch" style={Darkmode} id="flexSwitchCheckDefault"/>
-  <label className="form-check-label mx-1" htmlFor="flexSwitchCheckDefault">{btnText}</label>
-</div>
-</div>
+
 
 {/* <div className="container my-3">
     <button className="btn btn-primary" onClick={toggledarkmode} >{btnText}</button>

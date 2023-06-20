@@ -1,7 +1,7 @@
 import React  from 'react'
 import propTypes from 'prop-types'
 // import Modal1 from './Modal1'
-// import { Link } from 'react-router-dom'
+// import { link} from 'react-router-dom'
 
 export default function Navbar(props) {
     let Darkmode = {
@@ -21,7 +21,7 @@ export default function Navbar(props) {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0 nav-underline nav-fill">
           <li className="nav-item">
-            <a className="nav-link " aria-current="page" href="/">Home</a>
+            <a className="nav-link" aria-current="page" href="/">Home</a>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="/" >About</a>
@@ -38,6 +38,7 @@ export default function Navbar(props) {
         {/* <Modal1 mode={props.mode}/>  */}
 
         {/* dark mode switch */}
+        
         <div className={`form-check form-switch mx-3 text-${props.mode === 'light'?'dark':'white'}`}  >
               <input className="form-check-input" onClick={props.yellowMode} type="checkbox" role="switch" style={Darkmode} id="flexSwitchCheckDefault"/>
               <label className="form-check-label mx-1" htmlFor="flexSwitchCheckDefault">{props.Btn1Text}</label>
