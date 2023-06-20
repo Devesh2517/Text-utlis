@@ -1,15 +1,15 @@
   import Navbar from "./components/Navbar"
   import Textform from "./components/Textform"
   import './App.css';
-  import About from "./components/About";
+  // import About from "./components/About";
   import { useState } from "react";
   import Alert from "./components/Alert";
-  import {
-    BrowserRouter as Router,
-    Routes,
-    Route,
+  // import {
+  //   BrowserRouter as Router,
+  //   Routes,
+  //   Route,
     
-  } from "react-router-dom";
+  // } from "react-router-dom";
 
 
   function App() {
@@ -69,17 +69,18 @@
     }
     return (
     <>
-    <Router>
+    {/* <Router> */}
       <Navbar title="Textutlis" mode={Mode} togglemode={togglemode} yellowMode = {yellowMode} BtnText={BtnText} Btn1Text={Btn1Text}/>
       <Alert alert ={alert}/>
 
       <div className="container my-5">
-      <Routes>
-        <Route path="/about" element={<About/>}/>
-        <Route exact path="/" element={<Textform showAlert= {showAlert} heading="enter the text" mode = {Mode}/>}/>
-      </Routes>
+      <Textform showAlert= {showAlert} heading="enter the text" mode = {Mode}/>
+      {/* <Routes> */}
+        {/* <Route path="/about" element={<About/>}/> */}
+        {/* <Route exact path="/" element={<Textform showAlert= {showAlert} heading="enter the text" mode = {Mode}/>}/>
+      </Routes> */}
       </div>
-      </Router>
+      {/* </Router> */}
     </>
     );
   }
