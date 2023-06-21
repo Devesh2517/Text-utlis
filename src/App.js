@@ -13,11 +13,10 @@
 
   function App() {
     
-    // const [Theme,setTheme] = useState()
+   
     const [alert,setAlert] = useState(null)
-    // const [BtnText,setBtnText] = useState("Enable Dark mode")
-    // const [Btn1Text,setBtn1Text] = useState("Enable yellow mode")
-    const [theme, setTheme] = useState({ nav: "bg-primary navbar-dark", button: ["btn-primary", {}], textArea: {} })
+    
+    const [theme, setTheme] = useState({ nav: "bg-dark navbar-dark", button: ["btn-primary", {}], textArea: {} ,about:{}})
     
     const showAlert = (message,type)=>{
       setAlert({
@@ -30,19 +29,21 @@
     }
     const changeTheme = (event) => {
         if (event.target.value === "white") {
-            setTheme({ nav: "bg-light navbar-light", button: ["btn-primary", {}], textArea: {} })
+            setTheme({ nav: "bg-light navbar-light", button: ["btn-primary", {}], textArea: {},about:{} })
             document.body.style.backgroundColor = "white"
             document.body.style.color = "black" 
             showAlert("light mode is enabled","success")
         }
         else if (event.target.value === "dark") {
-            setTheme({ nav: "bg-dark navbar-dark", button: ["", { backgroundColor: "rgb(14, 27, 59)", color: "white" }], textArea: { backgroundColor: "rgb(14, 27, 59)", color: "white" } })
+            setTheme({ nav: "bg-dark navbar-dark", button: ["", { backgroundColor: "rgb(14, 27, 59)", color: "white" }], textArea: { backgroundColor: "rgb(14, 27, 59)", color: "white" } 
+            ,about:{ backgroundColor: "rgb(14, 27, 59)", color: "white"}})
             document.body.style.backgroundColor = "rgb(14, 27, 59)"
             document.body.style.color = "white"
             showAlert("Dark mode is enabled","success")
         }
         else if (event.target.value === "yellow") {
-            setTheme({ nav: "bg-yellow navbar-dark", button: ["", { backgroundColor: "yellow", color: "black" ,border:'2px solid black'}], textArea: { backgroundColor: "yellow" } })
+            setTheme({ nav: "bg-yellow navbar-light", button: ["", { backgroundColor: "#d2d242", color: "black" ,border:'2px solid black'}], textArea: { backgroundColor: "yellow" ,color:'black' }
+            ,about:{backgroundColor: "yellow",color:'black' } })
             document.body.style.backgroundColor = "yellow"
             document.body.style.color = "white"
             showAlert("yellow mode is enabled","success")
@@ -56,45 +57,7 @@
     }
 
 
-    // const togglemode = ()=>{
-    
-    //     setMode('#343a40')
-    //     setAlert('light')
-       
-    //     showAlert("Dark mode is enabled","success")
-    //     document.body.style.backgroundColor = '#343a40'
-        // document.title = 'Textutils-DarkMode'
-  
-      // else
-      // {
-      //   setMode('light')
-      //   showAlert("Light mode is enabled","success")
-       
-      //   document.body.style.backgroundColor = 'white'
-      //   // document.title = 'Textutils'
-      // }
-    // }
-
-    // const yellowMode = ()=>{
-    //   setMode('yellow')
-    //   showAlert("yellow mode is enabled","success")
-    //   // if(Mode === 'dark'){
-    //   //   setMode('yellow')
-    //   //   setAlert('light')
-       
-    //   //   showAlert("yellow mode is enabled","success")
-    //   //   document.body.style.backgroundColor = 'yellow'
-    //   //   // document.title = 'Textutils-YellowMode'
-    //   // }
-    //   // else
-    //   // {
-    //   //   setMode('ye')
-    //   //   showAlert("Light mode is enabled","success")
-       
-    //   //   document.body.style.backgroundColor = 'white'
-    //   //   // document.title = 'Textutils'
-    //   // }
-    // }
+   
     return (
     <>
     {/* <Router> */}

@@ -11,7 +11,7 @@ export default function Modal1(props) {
   <div>
         {/* <!-- Button trigger modal --> */}
         
-        <button className={`btn btn-outline-${props.mode === 'dark'?'light':'dark'}`} data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Login/Sign up</button>
+        <button className={`btn btn-outline-light`} data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Login/Sign up</button>
    
 
   {/* <!-- Modal --> */}
