@@ -72,7 +72,6 @@
     {/* <Router> */}
       <Navbar title="Textutlis" mode={Mode} togglemode={togglemode} yellowMode = {yellowMode} BtnText={BtnText} Btn1Text={Btn1Text}/>
       <Alert alert ={alert}/>
-
       <div className="container my-5">
       <Textform showAlert= {showAlert} heading="enter the text" mode = {Mode}/>
      <About mode={Mode}/>
