@@ -16,7 +16,7 @@
    
     const [alert,setAlert] = useState(null)
     
-    const [theme, setTheme] = useState({ nav: "bg-dark navbar-dark", button: ["btn-primary", {}], textArea: {} ,about:{}})
+    const [theme, setTheme] = useState({ nav: "bg-primary navbar-dark", button: ["btn-primary", {}], textArea: {} ,about:{}})
     
     const showAlert = (message,type)=>{
       setAlert({
