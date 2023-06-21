@@ -4,7 +4,7 @@ import Modal1 from './Modal1'
 // import { link} from 'react-router-dom'
 
 export default function Navbar(props) {
-  
+
 
   return (
     <nav className={`navbar navbar-expand-lg ${props.mode.nav} `}  >
@@ -25,24 +25,24 @@ export default function Navbar(props) {
 
           </ul>
           <div className='justify-center'>
-           <form className="d-flex me-2" role="search">
-          <input className="form-control me-3" type="search" placeholder="Search" aria-label="Search"/>
-          <button className="btn btn-dark me-4" type="submit">Search</button>
-        </form>
-        </div>
-       {/* login button */}
-          <Modal1 /> 
+            <form className="d-flex me-2" role="search">
+              <input className="form-control me-3" type="search" placeholder="Search" aria-label="Search" name='search' />
+              <button className="btn btn-dark me-4" type="submit">Search</button>
+            </form>
+          </div>
+          {/* login button */}
+          <Modal1 />
 
           {/* {Theme buttons } */}
 
-           <div className="mx-2 ">
+          <div className="mx-2 ">
             <button className="btn btn-light" onClick={props.changeTheme} value="white" >White</button>
           </div>
           <div className="mx-2 ">
             <button className="btn btn-dark" onClick={props.changeTheme} value="dark" >Dark</button>
           </div>
           <div className="mx-2 ">
-            <button className="btn" style={{backgroundColor:"yellow"}} onClick={props.changeTheme} value="yellow">yellow</button>
+            <button className="btn" style={{ backgroundColor: "yellow" }} onClick={props.changeTheme} value="yellow">yellow</button>
           </div>
 
 
