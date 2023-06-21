@@ -49,11 +49,11 @@ export default function Textform(props) {
 
                     <textarea className="form-control" value={text} onChange={handleonchange} style={props.mode.textArea} id="mybox" rows="10" ></textarea>
                 </div>
-                <button disabled={text.length === 0} style={props.mode.button[1]} className={`btn ${props.mode.button[0]}  mx-1 my-1`} onClick={handleonclick}>convert to uppercase</button>
-                <button disabled={text.length === 0} style={props.mode.button[1]} className={`btn ${props.mode.button[0]}  mx-1 my-1`} onClick={handleloclick}>convert to lowercase</button>
-                <button disabled={text.length === 0} style={props.mode.button[1]} className={`btn ${props.mode.button[0]} mx-1 my-1`} onClick={handlecopy}>copy text</button>
-                <button disabled={text.length === 0} style={props.mode.button[1]} className={`btn ${props.mode.button[0]} mx-1 my-1`} onClick={handleclear}>clear text</button>
-                <button disabled={text.length === 0} style={props.mode.button[1]} className={`btn ${props.mode.button[0]} mx-1 my-1`} onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+                <button disabled={text.length === 0} style={props.mode.button[1]} className={`btn ${props.mode.button[0]}  mx-2 my-2`} onClick={handleonclick}>convert to uppercase</button>
+                <button disabled={text.length === 0} style={props.mode.button[1]} className={`btn ${props.mode.button[0]}  mx-2 my-2`} onClick={handleloclick}>convert to lowercase</button>
+                <button disabled={text.length === 0} style={props.mode.button[1]} className={`btn ${props.mode.button[0]} mx-2 my-2`} onClick={handlecopy}>copy text</button>
+                <button disabled={text.length === 0} style={props.mode.button[1]} className={`btn ${props.mode.button[0]} mx-2 my-2`} onClick={handleclear}>clear text</button>
+                <button disabled={text.length === 0} style={props.mode.button[1]} className={`btn ${props.mode.button[0]} mx-2 my-2`} onClick={handleExtraSpaces}>Remove Extra Spaces</button>
 
                 <div className="container my-3">
                     <h1>Your text summary</h1>
