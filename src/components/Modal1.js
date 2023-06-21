@@ -2,7 +2,7 @@ import React from 'react'
 
 import Login1 from './Login1'
 
-export default function Modal1(props) {
+export default function Modal1() {
   const loginlink = {
     TextDecoder:'overline',
     color:'black'
@@ -11,7 +11,7 @@ export default function Modal1(props) {
   <div>
         {/* <!-- Button trigger modal --> */}
         
-        <button className={`btn btn-outline-light`} data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Login/Sign up</button>
+        <button className={`btn btn-success mx-2`} data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Login/Sign up</button>
    
 
   {/* <!-- Modal --> */}
